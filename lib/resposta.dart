@@ -12,11 +12,13 @@ class Resposta extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      child: TextButton(
-        onPressed: onSelected,
-        style: TextButton.styleFrom(
-            primary: Colors.white, backgroundColor: Colors.blue),
-        child: Text(botao),
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(32, 8, 32, 0),
+        child: TextButton(
+          onPressed: onSelected,
+          style: TextButton.styleFrom(primary: Colors.white, backgroundColor: Colors.red),
+          child: Text(botao),
+        ),
       ),
     );
   }

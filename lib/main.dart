@@ -62,15 +62,21 @@ class _PerguntaAppState extends State<PerguntaApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.red,
           title: const Text('Perguntas'),
         ),
-        body: temPerguntaSelecionada
-            ? Questionario(
-                perguntas: _perguntas,
-                perguntaSelecionada: _perguntaSelecionada,
-                responder: _responder,
-              )
-            : Resultado(_pontuacaoTotal, _reiniciarQuestionario),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            temPerguntaSelecionada
+                ? Questionario(
+                    perguntas: _perguntas,
+                    perguntaSelecionada: _perguntaSelecionada,
+                    responder: _responder,
+                  )
+                : Resultado(_pontuacaoTotal, _reiniciarQuestionario),
+          ],
+        ),
       ),
     );
   }
